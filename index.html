@@ -1,78 +1,136 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
-        <title>2048x881 Element</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mapping Stats</title>
         <style>
-            .container {
-                width: 100%;
-                height: auto;
-                background-color: #f0f0f0;
+            * {
                 box-sizing: border-box;
             }
 
-            .row {
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
                 display: flex;
-                justify-content: center;
-                margin-bottom: 20px;
-                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                background-color: #f3f5f7;
             }
 
-            .row-item {
-                width: calc(25% - 20px);
-                height: auto;
-                background-color: white;
-                border: 1px solid #ccc;
+            .stats-container {
+                display: flex;
+                gap: 1.5rem;
                 padding: 20px;
-                box-sizing: border-box;
-                margin: 10px;
+                justify-content: center;
+                max-width: 1200px;
+                margin-top: 2rem;
             }
 
-            @media (max-width: 1024px) {
-                .row-item {
-                    width: calc(50% - 20px);
-                }
+            .card {
+                background: #fff;
+                padding: 1.5rem;
+                border-radius: 8px;
+                width: 200px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
             }
 
-            @media (max-width: 768px) {
-                .row-item {
-                    width: calc(100% - 20px);
-                }
+            .card.red {
+                background-color: #d8433f;
+                color: #fff;
+            }
+
+            .card h2 {
+                font-size: 2rem;
+                margin: 0;
+            }
+
+            .card p {
+                font-size: 1rem;
+                margin: 0.5rem 0;
+            }
+
+            .card .details {
+                font-size: 0.9rem;
+                margin-top: 1rem;
+                color: #555;
+            }
+
+            .card .stat-value {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 0.5rem;
+            }
+
+            .footer-text {
+                color: #888;
+                font-size: 0.85rem;
+                margin-top: 1.5rem;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="row-item">
-                    <p>* Number of features: int *- need to add***</p>
-                </div>
-                <div class="row-item">
-                    <p>
-                        * Total length (for roads or rivers): int (km) *- need
-                        to add***
-                    </p>
-                </div>
-                <div class="row-item">
-                    <p>
-                        * Number of attributes: int (count) - number of columns
-                        *- need to add***
-                    </p>
-                </div>
-                <div class="row-item">
-                    <p>Languages available</p>
+        <div class="stats-container">
+            <!-- Card 1 -->
+            <div class="card red">
+                <h2>85,532,344</h2>
+                <p>Total kms</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <h2>8.2K</h2>
+                <p>Number of Features</p>
+                <div class="details">Created - Modified - Deleted</div>
+                <div class="stat-value">
+                    <span>8.4K</span>
+                    <span>5.9K</span>
+                    <span>184</span>
                 </div>
             </div>
-            <div class="row">
-                <div class="row-item">
-                    <p>
-                        * Languages available: string (name?) *- TBD (could add
-                        to description maybe)***
-                    </p>
-                </div>
-                <div class="row-item">
-                    <p>* Attributes: string</p>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <h2>184.1</h2>
+                <p>Km road mapped</p>
+                <div class="details">Created + Modified - Deleted</div>
+                <div class="stat-value">
+                    <span>150.3</span>
+                    <span>+56.7</span>
+                    <span>6.8</span>
                 </div>
             </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <h2>7</h2>
+                <p>Languages Available</p>
+                <div class="details">Created - Modified - Deleted</div>
+                <div class="stat-value">
+                    <span>7</span>
+                    <span>31</span>
+                    <span>0</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <h2>221.4</h2>
+                <p>Number of Attributes</p>
+                <div class="details">Created + Modified - Deleted</div>
+                <div class="stat-value">
+                    <span>192.7</span>
+                    <span>+32.3</span>
+                    <span>0.5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            These statistics come from ohsomeNow Stats and were last updated at
+            Oct 29, 2024, 2:15 PM (America/Mexico_City).
         </div>
     </body>
 </html>
