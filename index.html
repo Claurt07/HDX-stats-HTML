@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mapping Stats</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
         <style>
             * {
                 box-sizing: border-box;
@@ -45,6 +49,7 @@
             .card h2 {
                 font-size: 2rem;
                 margin: 0;
+                color: #d8433f;
             }
 
             .card p {
@@ -69,68 +74,340 @@
                 font-size: 0.85rem;
                 margin-top: 1.5rem;
             }
+
+            .tooltip-icon {
+                position: relative;
+                display: inline-block;
+                cursor: help;
+            }
+
+            .tooltip-icon .tooltip-text {
+                visibility: hidden;
+                width: 200px;
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 10px;
+                position: absolute;
+                z-index: 1;
+                bottom: 150%;
+                left: 50%;
+                margin-left: -100px;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .tooltip-icon:hover .tooltip-text {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .tables-container {
+                display: flex;
+                gap: 1.5rem;
+                margin-top: 2rem;
+                max-width: 1200px;
+                justify-content: center;
+            }
+
+            table {
+                width: 350px;
+                border-collapse: collapse;
+                background: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                margin-bottom: 10px;
+            }
+
+            th,
+            td {
+                padding: 0.75rem;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f3f5f7;
+                font-weight: bold;
+            }
+
+            .show-more-btn {
+                display: inline-block;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+                text-align: center;
+                background-color: #d8433f;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: -5px;
+            }
+
+            .hidden-row {
+                display: none;
+            }
         </style>
     </head>
     <body>
+        <!-- Cards Section -->
         <div class="stats-container">
             <!-- Card 1 -->
             <div class="card red">
-                <h2>85,532,344</h2>
-                <p>Total kms</p>
+                <br />
+                <br />
+                <h2 style="color: white">85,532,344</h2>
+                <p>Kms of Road</p>
+                <div class="details">
+                    <span class="tooltip-icon">
+                        <i class="fa fa-info-circle"></i>
+                        <span class="tooltip-text">
+                            4% buildings were added or updated in the last 6
+                            months
+                        </span>
+                    </span>
+                </div>
             </div>
 
             <!-- Card 2 -->
             <div class="card">
                 <h2>8.2K</h2>
                 <p>Number of Features</p>
-                <div class="details">Created - Modified - Deleted</div>
-                <div class="stat-value">
+                <div class="details">
+                    Elements identified as distinct
+                    <span class="tooltip-icon">
+                        <i class="fa fa-info-circle"></i>
+                        <span class="tooltip-text">
+                            4% buildings were added or updated in the last 6
+                            months
+                        </span>
+                    </span>
+                </div>
+                <!-- <div class="stat-value">
                     <span>8.4K</span>
                     <span>5.9K</span>
                     <span>184</span>
-                </div>
+                </div> -->
             </div>
 
             <!-- Card 3 -->
             <div class="card">
                 <h2>80%</h2>
-                <p>Completness</p>
-                <div class="details">Percentage based on xyz</div>
-                <div class="stat-value">
+                <p>Completeness</p>
+                <div class="details">
+                    Based on the OSM dataset compared to an AI-estimated
+                    building count
+                    <span class="tooltip-icon">
+                        <i class="fa fa-info-circle"></i>
+                        <span class="tooltip-text">
+                            4% buildings were added or updated in the last 6
+                            months
+                        </span>
+                    </span>
+                </div>
+                <!-- <div class="stat-value">
                     <span>150.3</span>
                     <span>+56.7</span>
                     <span>6.8</span>
-                </div>
+                </div> -->
             </div>
 
             <!-- Card 4 -->
             <div class="card">
                 <h2>7</h2>
                 <p>Languages Available</p>
-                <div class="details">Created - Modified - Deleted</div>
-                <div class="stat-value">
+                <div class="details">
+                    Including local language and English
+                    <span class="tooltip-icon">
+                        <i class="fa fa-info-circle"></i>
+                        <span class="tooltip-text">
+                            4% buildings were added or updated in the last 6
+                            months
+                        </span>
+                    </span>
+                </div>
+                <!-- <div class="stat-value">
                     <span>7</span>
                     <span>31</span>
                     <span>0</span>
-                </div>
+                </div> -->
             </div>
 
             <!-- Card 5 -->
             <div class="card">
                 <h2>6 Months</h2>
                 <p>Recency of Data</p>
-                <div class="details">Clacilated based on xyz</div>
-                <div class="stat-value">
+                <div class="details">
+                    Average age of data for this region
+                    <span class="tooltip-icon">
+                        <i class="fa fa-info-circle"></i>
+                        <span class="tooltip-text">
+                            4% buildings were added or updated in the last 6
+                            months
+                        </span>
+                    </span>
+                </div>
+                <!-- <div class="stat-value">
                     <span>192.7</span>
                     <span>+32.3</span>
                     <span>0.5</span>
-                </div>
+                </div> -->
             </div>
         </div>
 
-        <div class="footer-text">
-            These statistics come from ohsomeNow Stats and were last updated at
-            Oct 29, 2024, 2:15 PM (America/Mexico_City).
+        <!-- Tables Section -->
+        <div class="tables-container">
+            <!-- Table 1 -->
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>HOT "Key" Counts</th>
+                            <th>Count</th>
+                            <th>(%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total features</td>
+                            <td>27418</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr>
+                            <td>place</td>
+                            <td>27418</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr>
+                            <td>osm_id</td>
+                            <td>27418</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>osm_type</td>
+                            <td>27418</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>name</td>
+                            <td>10284</td>
+                            <td>37.51%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>source</td>
+                            <td>7154</td>
+                            <td>26.09%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>name:en</td>
+                            <td>6931</td>
+                            <td>25.28%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>name:ar</td>
+                            <td>5709</td>
+                            <td>20.82%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>population</td>
+                            <td>44</td>
+                            <td>0.16%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>is_in</td>
+                            <td>7</td>
+                            <td>0.03%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="show-more-btn" onclick="toggleRows(1)">
+                    Show more
+                </button>
+            </div>
+
+            <!-- Table 2 -->
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>OCHA "Key" Counts</th>
+                            <th>Count</th>
+                            <th>(%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total features</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr>
+                            <td>FID_sdn_ad</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr>
+                            <td>OLD_FID_Su</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>OBJECTID_1</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>featureNam</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>featureRef</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>feature_AR</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>feature_pc</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>Type</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td>Type_Text</td>
+                            <td>11980</td>
+                            <td>100.00%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="show-more-btn" onclick="toggleRows(2)">
+                    Show more
+                </button>
+            </div>
         </div>
+
+        <script>
+            function toggleRows(tableNumber) {
+                const rows = document.querySelectorAll(
+                    tableNumber === 1
+                        ? "table:first-of-type .hidden-row"
+                        : "table:last-of-type .hidden-row",
+                );
+                rows.forEach((row) => {
+                    row.style.display =
+                        row.style.display === "none" ? "table-row" : "none";
+                });
+            }
+        </script>
     </body>
 </html>
